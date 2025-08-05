@@ -1,2 +1,2 @@
 # learning-abap
-My Abap homeworks 
+ABAP homeworks and self-practices I did during my internship.
