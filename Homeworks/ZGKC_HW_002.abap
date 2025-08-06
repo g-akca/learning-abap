@@ -34,7 +34,7 @@ END-OF-SELECTION.
 
 FORM calculate_avg USING mt1 mt2 fn.
   gv_avg = ( mt1 * 30 / 100 ) + ( mt2 * 30 / 100 ) + ( fn * 40 / 100 ).
-  IF gv_avg >= 50 AND p_final >= 50.
+  IF gv_avg >= 50 AND fn >= 50.
     WRITE: 'Öğrenci dönemi başarıyla geçti.', /.
   ELSE.
     WRITE: 'Öğrenci kaldı. Dönemi tekrar edecek.', /.
