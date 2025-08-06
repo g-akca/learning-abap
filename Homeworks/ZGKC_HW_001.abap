@@ -3,7 +3,7 @@
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
-REPORT ZGKC_HW_001.
+REPORT zgkc_hw_001.
 
 SELECTION-SCREEN BEGIN OF BLOCK shape WITH FRAME TITLE TEXT-001.
 PARAMETERS: p_square AS CHECKBOX USER-COMMAND check,
@@ -27,30 +27,6 @@ SELECTION-SCREEN END OF BLOCK var.
 DATA: gv_last_checked TYPE string,
       gv_result       TYPE p DECIMALS 2.
 
-FORM calc_sq_area.
-  gv_result = p_sq_sd * p_sq_sd.
-  WRITE: 'Kare Alanı: ', gv_result.
-ENDFORM.
-FORM calc_sq_perim.
-  gv_result = p_sq_sd * 4.
-  WRITE: 'Kare Çevresi: ', gv_result.
-ENDFORM.
-FORM calc_rc_area.
-  gv_result = p_rc_sd1 * p_rc_sd2.
-  WRITE: 'Dikdörtgen Alanı: ', gv_result.
-ENDFORM.
-FORM calc_rc_perim.
-  gv_result = ( p_rc_sd1 + p_rc_sd2 ) * 2.
-  WRITE: 'Dikdörtgen Çevresi: ', gv_result.
-ENDFORM.
-FORM calc_tri_area.
-  gv_result = p_base * p_height / 2.
-  WRITE: 'Üçgen Alanı: ', gv_result.
-ENDFORM.
-FORM calc_tri_perim.
-  gv_result = sqrt( p_height ** 2 + p_base ** 2 ) + p_height + p_base.
-  WRITE: 'Üçgen Çevresi: ', gv_result.
-ENDFORM.
 
 INITIALIZATION.
 
@@ -99,3 +75,30 @@ START-OF-SELECTION.
   ELSE.
     WRITE 'Lütfen bir şekil seçin.'.
   ENDIF.
+
+END-OF-SELECTION.
+
+FORM calc_sq_area.
+  gv_result = p_sq_sd * p_sq_sd.
+  WRITE: 'Kare Alanı: ', gv_result.
+ENDFORM.
+FORM calc_sq_perim.
+  gv_result = p_sq_sd * 4.
+  WRITE: 'Kare Çevresi: ', gv_result.
+ENDFORM.
+FORM calc_rc_area.
+  gv_result = p_rc_sd1 * p_rc_sd2.
+  WRITE: 'Dikdörtgen Alanı: ', gv_result.
+ENDFORM.
+FORM calc_rc_perim.
+  gv_result = ( p_rc_sd1 + p_rc_sd2 ) * 2.
+  WRITE: 'Dikdörtgen Çevresi: ', gv_result.
+ENDFORM.
+FORM calc_tri_area.
+  gv_result = p_base * p_height / 2.
+  WRITE: 'Üçgen Alanı: ', gv_result.
+ENDFORM.
+FORM calc_tri_perim.
+  gv_result = sqrt( p_height ** 2 + p_base ** 2 ) + p_height + p_base.
+  WRITE: 'Üçgen Çevresi: ', gv_result.
+ENDFORM.
